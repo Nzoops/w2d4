@@ -9,8 +9,6 @@ page = Nokogiri::HTML(URI.open("https://coinmarketcap.com/all/views/all/"))
 
     crypto_name = page.css(".jlJKxd .cmc-link").map { |name| name.content.strip } # map iterate then iterate over name and extract the content & remove spaces
     #puts crypto_name
-
-    #binding.pry
     
     crypto_price = page.css(".ejtlWy a.cmc-link").map { |price| price.content.strip }
     #puts crypto_price
